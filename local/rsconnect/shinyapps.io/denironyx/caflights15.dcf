@@ -5,8 +5,8 @@ account: denironyx
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1259329
-bundleId: 2452563
+bundleId: 2452733
 url: https://denironyx.shinyapps.io/caflights15/
-when: 1569762575.45973
+when: 1569768547.92234
 asMultiple: FALSE
 asStatic: FALSE

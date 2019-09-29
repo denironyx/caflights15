@@ -65,7 +65,7 @@ ui <- dashboardPage(
                 label = "Month:",
                 choices = month_list,
                 selected = 99,
-                #size = 13,
+                size = 13,
                 selectize = FALSE
             ),
             actionLink("remove", "Remove detail tabs"),
