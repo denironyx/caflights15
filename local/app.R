@@ -45,6 +45,10 @@ month_list <- as.list(1:12) %>%
     set_names(month.name)
 
 month_list$`All Year` <- 99
+month_list <- as_tibble(month_list)
+month_list <- month_list %>% 
+    select(`All Year`, January:December) %>% 
+    as.list()
 
 ui <- dashboardPage(
     dashboardHeader(
