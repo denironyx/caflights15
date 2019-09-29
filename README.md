@@ -7,7 +7,7 @@ Interfacing with the database
 ![](images/california1.PNG)
 
 Export the data from the database and created a dashboard with it
-![](images/california_local.PNG)
+![](images/calfornia.PNG)
 
 This dashboard is connected to the MySQL schema and provides the following data tables.
 
