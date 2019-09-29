@@ -11,8 +11,14 @@ Export the data from the database and created a dashboard with it
 
 This dashboard is connected to the MySQL schema and provides the following data tables.
 
-- flights: all flights that departed from california in 2015
-- planes: construction information about each plane
+## Relational Data model
+The relational model for this project represents the database of the datasets as collection of relations(tables of values). Every row in the table represents a collection of related data values.
+![](images/erd.png)
+
+
+In the relational model the, relations are saved in the table format. It is stored along its entities. A table has two properties rows and columns. Rows represents records and columns represents attributes. The following are the tables used in this project.
+
+- caflights15: all flights that departed from california in 2015
 - airports: airport names and locations
 - airlines: translation between two letter carrier codes and names
 
