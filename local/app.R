@@ -1,9 +1,9 @@
-
-
+library(rsconnect)
 library(shiny)
 library(shinydashboard)
 
 library(dplyr)
+library(readr)
 library(purrr)
 library(rlang)
 library(stringr)
@@ -15,10 +15,10 @@ library(dplyr)
 
 ## Importing the dataset
 ##loading data into R
-setwd("C:/Users/LENOVO/Documents/Data science project/caflights15")
-caflights15 <- read_csv("data/caflight15.csv")
-airlines <- read_csv("data/airlines.csv")
-airports <- read_csv("data/airports.csv")
+#setwd("C:/Users/LENOVO/Documents/Data science project/caflights15")
+caflights15 <- readRDS("data/caflights15.rds")
+airlines <- readRDS("data/airlines.rds")
+airports <- readRDS("data/airports.rds")
 
 caflights15 <- caflights15 %>% 
     select(1,2,3,8,9,10,11,12,13,4,14,5,6,7,15) %>% 
@@ -68,7 +68,15 @@ ui <- dashboardPage(
                 #size = 13,
                 selectize = FALSE
             ),
-            actionLink("remove", "Remove detail tabs")
+            actionLink("remove", "Remove detail tabs"),
+            br(),
+            p(),
+            div(img(src = "dennis1.jpg")), br(), p("Dennis Irorere"),
+            a(href = "https://twitter.com/denironyx", target = "_blank", icon("twitter", "fa-3x")),
+            a(href = "https://www.linkedin.com/in/dennis-irorere/", target = "_blank", icon("linkedin-square", "fa-3x")), 
+            br(),
+            p(),
+            a(href = "https://github.com/denironyx/caflights15", target = "_blank", "source code")
         )
     ),
     dashboardBody(
@@ -198,7 +206,7 @@ server <- function(input, output, session) {
             res <- res %>%
                 mutate(label = x)
         }
-        r2d3(res, "local/col_plot.js")
+        r2d3(res, "col_plot.js")
     })
     
     # Top airports (server) -------------------------------------------
@@ -217,7 +225,7 @@ server <- function(input, output, session) {
                 y = n,
                 label = dest_name
             ) %>%
-            r2d3("local/bar_plot.js")
+            r2d3("bar_plot.js")
     })
     
     ## airplane

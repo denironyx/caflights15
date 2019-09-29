@@ -8,6 +8,7 @@ caflights15 <- read_csv("data/caflight15.csv")
 
 ## California cities
 colnames(caflights15)
+nrow(caflights15)
 caflights15 <- caflights15 %>% 
   select(1,2,3,8,9,10,11,12,13,4,14,5,6,7,15) %>% 
   rename(year = YEAR, month = MONTH, day = DAY_OF_MONTH, dep_time = DEP_TIME, 
@@ -62,6 +63,12 @@ db_flights %>%
   rename(`No of flights` = n) %>% 
   head(10)
 
+saveRDS(caflights15, file = "caflights15.rds")
+saveRDS(airlines, file = "airlines.rds")
+saveRDS(airports, file = "airports.rds")
 
 
 
+flight22 <- readRDS(file = "caflights15.rds")
+nrow(flight22)
+head(flight22)
